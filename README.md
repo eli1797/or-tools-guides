@@ -52,6 +52,19 @@ What challenges did I face?
 
  - Answer why. Why would you choose to use constraint programming
 
+ - Top Resources
+    - It was very valuable for me watching and attempting to solve problems along with [this video](https://www.youtube.com/watch?v=hod0L0zfnZs)
+
+ - Limitations of OR-Tools
+    - Only solves static problems. The problem definition can't change between starting the run and result.
+    - No uncertainty. Problems must be well defined, results feasible or unfeasible. 
+    - Hard/impossible to apply your knowledge to the search for solution (happens in the solver)
+
+ - Fancy terms and/or related subjects
+    - [Combinatorial Optimization](https://en.wikipedia.org/wiki/Combinatorial_optimization)
+        - Tractibility
+    - [Space](https://en.wikipedia.org/wiki/Space_(mathematics)), [Domain](https://en.wikipedia.org/wiki/Domain_(mathematical_analysis))
+
 
 
 # 0: Introduction
