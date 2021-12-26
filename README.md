@@ -1,13 +1,33 @@
-## Challenges of Constraint Programming
+This should probably in blog post form
 
-Expressing the problem
- - How do you turn a problem description into code (decision variables and constraints)?
+blah blah blah 
 
+motivation
+
+definition
+
+approach
+
+consequences
+
+definition
+
+blah blah
 
 ## Definitions
 
-What are decision variables?  
-Decision variables are unknowns, that can take on a range of possible values. Think of them as "eventual" decision variables as the solver will do work and eventually set a value. 
+### Model
+
+
+### Decision Variables
+Decision variables are unknowns that can take on a specified range of possible values. Think of them as "eventual" decision variables as the solver will do work and eventually decide the variables value.
+
+This is where a lot of the confusion of constraint programming variables arises. When programming 
+
+## Challenges of Constraint Programming
+
+Expressing the problem (well really the solution)
+ - How do you turn a problem description into code (decision variables and constraints)?
 
 
 What challenges did I face?
@@ -19,6 +39,7 @@ What challenges did I face?
 
     Maybe I pose a problem that seems unrealistic for them to solve and show them how to break it down.
     Offer unit tests for each section
+
 
 ## TODO
  - Instructions on setup for Mac
