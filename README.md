@@ -58,13 +58,13 @@ What challenges did I face?
  - Limitations of OR-Tools
     - Only solves static problems. The problem definition can't change between starting the run and result.
     - No uncertainty. Problems must be well defined, results feasible or unfeasible. 
-    - Hard/impossible to apply your knowledge to the search for solution (happens in the solver)
+    - Hard/impossible to apply your knowledge in the search for solution (naive domain reduction, happens in the solver)
 
- - Fancy terms and/or related subjects
+ - A few fancy terms and related subjects
     - [Combinatorial Optimization](https://en.wikipedia.org/wiki/Combinatorial_optimization)
         - Tractibility
     - [Space](https://en.wikipedia.org/wiki/Space_(mathematics)), [Domain](https://en.wikipedia.org/wiki/Domain_(mathematical_analysis))
-
+    - [Operations Research](https://en.wikipedia.org/wiki/Operations_research)
 
 
 # 0: Introduction
@@ -72,11 +72,62 @@ todo
 
 Let's say you are given a problem to solve. In the standard programming paradigmn you start with a state and specify steps that get you to a solution for your problem. In constraint programming... it's different.
 
-First, you describe the bounds of your problem (ex: find the minimum temperature is bounded by 0 Kelvin) 
-Second, you describe the problem's solution.
-The above make up a model then let a "solver" find the solution. 
+First, you describe the bounds of your problem (ex: find the minimum temperature is bounded by 0 Kelvin)   
+Second, you describe the problem's solution.  
+These make up a model. The model is passed to a let a "solver" which looks for solutions
 
 
 
 
 # 1: Standard Programming vs. Constraint Programming
+
+
+Example: Find the two greatest unique integers in an array:
+ - array contains only whole numbers (0, 1, 2, ...)
+
+Standard Programming (pythonish pseudocode)
+```
+def greatestUniqueInts(array: List[int]) -> (int, int):
+    greatest = -1
+    second = -1
+
+    for num in array:
+        if num > greatest:
+            greatest = num
+
+        if num != greatest and num > second:
+            second = num
+
+    if greatest == second or second < 0 greatest < 0:
+        raise NotSolvableError("crap")
+
+    return greatest, second
+```
+
+Constraint Programming
+```
+def greatestUniqueInts(array: List[int]) -> (int, int):
+
+    model = CP_Model()
+
+    # decision variables
+    greatest = model.Int_Var(0, maxint): # domain: values a variable can take on, anything from 0 to infinity
+    second = model.Int_Var(0, maxint)
+
+    # constraint: greatest and second must be unique
+    model.Add(greatest != second)
+
+    # maximize
+    model.Maximize(greatest + second)
+
+    solution = solver.Solve(model)
+
+    if solution:
+        return (solution.greatest, solution.second)
+    else:
+        raise NotSolvableError("crap")
+
+
+
+
+```
