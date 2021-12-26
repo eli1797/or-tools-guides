@@ -16,6 +16,8 @@ blah blah
 
 ## Definitions
 
+### Feasibility vs Optimality
+
 ### Model
 
 
@@ -44,3 +46,24 @@ What challenges did I face?
 ## TODO
  - Instructions on setup for Mac
     - Or use docker or something
+
+ - Separate into chapters
+ - Maybe move to jupyter notebook / google collab so can be shared easier
+
+ - Answer why. Why would you choose to use constraint programming
+
+
+
+# 0: Introduction
+todo
+
+Let's say you are given a problem to solve. In the standard programming paradigmn you start with a state and specify steps that get you to a solution for your problem. In constraint programming... it's different.
+
+First, you describe the bounds of your problem (ex: find the minimum temperature is bounded by 0 Kelvin) 
+Second, you describe the problem's solution.
+The above make up a model then let a "solver" find the solution. 
+
+
+
+
+# 1: Standard Programming vs. Constraint Programming
