@@ -70,6 +70,8 @@ What challenges did I face?
 # 0: Introduction
 todo
 
+Motivate the reason to use / learn constraint programming
+
 Let's say you are given a problem to solve. In the standard programming paradigmn you start with a state and specify steps that get you to a solution for your problem. In constraint programming... it's different.
 
 First, you describe the bounds of your problem (ex: find the minimum temperature is bounded by 0 Kelvin)   
